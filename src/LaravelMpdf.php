@@ -79,6 +79,9 @@ class LaravelMpdf
 
         // use_dictionary_lbr
         $this->mpdf->useDictionaryLBR = $this->getConfig('use_dictionary_lbr');
+
+        // use templates
+        $this->mpdf->SetDocTemplate($this->getConfig('doc_template_file'), $this->getConfig('doc_template_continue'), $this->getConfig('doc_template_continue2pages'));
     }
 
     protected function getConfig($key)
